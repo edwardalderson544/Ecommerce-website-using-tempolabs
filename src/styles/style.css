@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* Mobile Navigation */
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 flex justify-between items-center z-50;
+    /* Hide on desktop */
+    @apply md:hidden;
+  }
+
+  .mobile-nav-button {
+    @apply flex flex-col items-center justify-center text-gray-600 hover:text-primary transition-colors;
+    @apply w-16;
+  }
+
+  .mobile-nav-button span {
+    @apply text-xs mt-1;
+  }
+
+  /* Content padding for mobile navigation */
+  .page-container {
+    @apply min-h-screen bg-white;
+    /* Add padding at bottom for mobile nav */
+    @apply pb-20 md:pb-0;
+  }
+
+  /* Hide mobile elements on desktop */
+  .mobile-only {
+    @apply md:hidden;
+  }
+
+  /* Hide desktop elements on mobile */
+  .desktop-only {
+    @apply hidden md:block;
+  }
+}
